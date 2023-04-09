@@ -3,11 +3,11 @@ A small C program, and python script used as part of a sticker design competitio
 
 Inspired by "Donut Math" by Andy Sloane (https://www.a1k0n.net/2011/07/20/donut-math.html) and that bouncing DVD logo from old VHS players, I decided to shape my idea around the logo itself being a fun demonstration of applied computer science. The C program "jamoo.c" renders a 72 by 18 border of ascii characters, and a 3d rendered ASCII text of the JMU logo bouncing around the box. Below is a 4 second example in the form of a GIF of a bandicam recording. 
 
-# White Logo
-![white logo](https://github.com/samspages/JMU23StickerComp/blob/main/cs23logo.PNG?raw=true)
+# White Logo - Low Res Rounded 
+![white logo](https://github.com/samspages/JMU23StickerComp/blob/main/cs23logo.png?raw=true)
 
-# Black Logo
-![black logo](https://github.com/samspages/JMU23StickerComp/blob/main/cs23logoBlack.PNG?raw=true)
+# Black Logo - Low Res Rounded 
+![black logo](https://github.com/samspages/JMU23StickerComp/blob/main/cs23logoBlack.png?raw=true)
 
 # Example GIF
 ![](https://github.com/samspages/JMU23StickerComp/blob/main/jmoo.gif)
