@@ -1,0 +1,76 @@
+            
+            
+
+            #include<stdio.h>#include<string.h>
+            #include<stdbool.h>#include<stdlib.
+                h>#include<time.h>#ifdef_
+                WIN32#include<windows.h>#
+                endiftypedefstruct{intx,y
+                ;charc;}Point;typedefstru
+                ct{intx,y;intmagnitude;}V
+                ector;#defineWIDTH36#defi
+                neHEIGHT5#defineBORDER_WI
+                DTH72#defineBORDER_HEIGHT
+                18boolis_inside_bounds(in
+                tx,inty,intlimitX,intlimi
+                tY){returnx>=0&&x<limitX&
+    &y>=0&&y<limitY-2;}voidclear_screen()
+    {#ifdef_WIN32system("cls");#elseprint
+    f("\033[2J");#endif}voidmove_cursor_h
+    ome(){#ifdef_WIN32HANDLEhStdout=GetSt
+    dHandle(STD_OUTPUT_HANDLE);COORDcoord
+
+
+
+    ={0,0};SetConsole                           +offsetY;if(point
+    CursorPosition(hS                           Y==y||pointY==y-1
+    tdout,coord);#els                           ){returntrue;}}re
+    eprintf("\033[H");#en                   ,intturnfalse;}voidre
+    dif}voidinitialize_vec                 *offYnder_ascii_art(Po
+    tor(Vector*vector){sran               setY->int)(Pointpoints[
+    d(time(NULL));do{vector->        ){charbuffer,intnum_points,i
+    x=(rand()%3)-1;vector->y=(rn   toffsetX,){charbuffer[BORDER_H
+    and()%3)-1;}while  ){charbuffer[BORDER_HE  IGHT][BORDER_WIDTH
+    (vector->x==0||ve  (inti=0;i<BORDER_WIDTH   +1];memset(buffer
+    ctor->y==0);vecto                           ,'',sizeof(buffer
+    r->magnitude=1;}b                           ));for(inti=0;i<B
+    oolshare_row(inty                           ORDER_HEIGHT;i++)
+    ,Pointpoints[],in                           {buffer[i][0]='|'
+    tnum_points,intof                           ;buffer[i][BORDER     
+    fsetX,intoffsetY)                           _WIDTH-1]='|';}fo                        
+    {for(inti=0;i<num                           r(inti=0;i<BORDER                     
+    _points;i++){intp                           _WIDTH;i++){buffe                         
+    ointY=points[i].y                           r[0][i]='_';buffe                
+
+    
+    
+    [BORDER_HEIGHT-1][i]='_'                    art[]={"__________","/\\\\
+    ;}for(inti=0;i<num_point                    /\\\"-./\\/\\\\/\\\\","_\\
+    s;i++){intx=points[i].x+                    _\\\\\\\\\\-./\\\\\\\\\\_\
+    offsetX;inty=points[i].y                    \\\","/\\_____\\\\\\_\\\\\
+    +offsetY;if(x>=0&&x<BORD                    \_\\\\\\_____\\","\\/_____
+    ER_WIDTH&&y>=0&&y<BORDER                    /\\/_/\\/_/\\/_____/",};Po
+    _HEIGHT){buffer[y][x]=po                    intpoints[128];intnum_poin
+    ints[i].c;}}for(inty=0;y                    ts_points=0;Vectorvector;i
+    <BORDER_HEIGHT;y++){for(                    nitialize_vector(&vector);
+    intx=0;x<BORDER_WIDTH;x+                    intoffsetX=(BORDER_WIDTH-W
+    +){if(buffer[y][x]!=''||                    IDTH)/2;intoffsetY=(BORDER
+    (y==0||y==BORDER_HEIGHT-                    _HEIGHT-HEIGHT-2)/2;for(int
+    1||x==0||x==BORDER_WIDTH                    y=0;y<HEIGHT;y++){for(intx=
+    -1)){if((x==BORDER_WIDTH                    0;x<WIDTH;x++){if(ascii_art
+    -1)&&share_row(y,points,;off           setX+[y][x]!=''){points[num_poin
+    num_points,offsetX,offse);usleep     (66000)ts++]=(Point){x,y-HEIGHT/2,
+    tY)){putchar('');}putchaints,offsetX,offsetYascii_art[y][x]};}}}while(1
+    r(buffer[y][x]);}else{puii_art(points,num_po){clear_screen();move_curso
+    tchar('');}}putchar('\n');}}intmain(){constchar*ascii_home();render_asc
+    
+
+
+// excess
+
+    ;offsetX+=vector.x*vector.magnitude;offsetY+=vector.y*vector.ma
+    gnitude;if(vector.magnitude>1){vector.magnitude=1;}if(!is_inside_bounds(offsetX,
+    offsetY-4,BORDER_WIDTH-WIDTH,BORDER_HEIGHT-HEIGHT)){if(offsetX<0||offsetX>=BORDE
+    R_WIDTH-WIDTH){vector.x=-vector.x;}if(offsetY<0||offsetY>=BORDER_HEIGHT-HEIGHT-1
+    ){vector.y=-vector.y;}}for(inti=0;i<num_points;i++){if(points[i].y==-HEIGHT/2&&o
+    ffsetY+points[i].y<1){vector.y=abs(vector.y);}}}return0;}
